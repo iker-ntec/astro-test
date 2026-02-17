@@ -1,5 +1,17 @@
 ---
+const pageTitle = "Sobre mi";
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Escritor técnico",
+  hobbies: ["fotografia", "observación de aves", "peñarol"],
+};
 
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Redacción de documentos"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -9,15 +21,47 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Test página Astro</title>
+		<title>{pageTitle}</title>
+	    <style>
+	    	h1 {
+    	    color: purple;
+       		font-size: 4rem;
+     		}
+			.skill {
+			    color: green;
+    			font-weight: bold;
+  			}
+	    </style>
+
 	</head>
 	<body>
         <a href="/">Inicio</a><br>
         <a href="/about/">Sobre mi</a><br>
         <a href="/blog/">Blog</a>
-		<h1>Sobre mi</h1>
+		<h1>{pageTitle}</h1>
         <h2>... Este es el primer sitio con Astro</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis possimus neque quis tenetur exercitationem dicta ratione itaque magnam soluta maxime fuga eius sapiente quaerat, ad optio praesentium eveniet? At, recusandae? <strong>Todo esto es un sitio web hecho con el framework de Astro</strong></p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, id magnam! Quisquam iste, eaque id facere facilis nulla, maiores animi odit ad, cupiditate exercitationem vel unde. Quam quis nemo laboriosam?</p>
-    </body>
+		
+		<p>He aquí algunos datos sobre mí:</p>
+		<ul>
+		<li>Me llamo {identity.firstName}.</li>
+		<li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
+		{identity.hobbies.length >= 2 &&
+			<li>Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
+		}
+		</ul>
+		<p>Mis habilidades son:</p>
+		<ul>
+		{skills.map((skill) => <li class="skill">{skill}</li>)}
+		</ul>
+
+
+
+
+		{happy && <p>¡Estoy feliz de aprender Astro!</p>}
+
+		{finished && <p>¡He terminado este tutorial!</p>}
+
+		{goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
+	</body>
 </html>

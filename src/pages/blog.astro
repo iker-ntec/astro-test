@@ -1,5 +1,5 @@
 ---
-
+const pageTitle = "Blog";
 ---
 
 <html lang="en">
@@ -9,13 +9,18 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Test página Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <a href="/">Inicio</a><br>
         <a href="/about/">Sobre mi</a><br>
 		<a href="/blog/">Blog</a>
-		<h1>Blog</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod natus maxime quo sit alias obcaecati minima voluptatibus eligendi delectus ipsum consectetur odio fugit architecto quidem, quos, voluptatem consequuntur. Eaque, dolorem? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi non possimus illum? Sapiente temporibus, vero maxime fugit quibusdam accusantium ad voluptates necessitatibus culpa amet ea dolorem quae error, maiores ratione! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam recusandae doloremque dolor quas harum quisquam suscipit aut quis iusto nostrum deserunt at eius laboriosam iure voluptas consectetur, maxime provident voluptatem!</p>
+		<h1>{pageTitle}</h1>
+    	<p>Aquí es donde publicaré acerca de mi viaje aprendiendo Astro.</p>
+   			<ul>
+      			<li><a href="/posts/post-1/">Publicación 1</a></li>
+				<li><a href="/posts/post-2/">Publicación 2</a></li>
+      			<li><a href="/posts/post-3/">Publicación 3</a></li>
+  	  		</ul>
 	</body>
 </html>
